@@ -1,15 +1,9 @@
-/**
- * @fileOverview 获取用户信息
- * @Author     zhaozeneng@baidu.com
- * @CreateTime 2016-04-30T17:20:07+0800
- */
-'use strict';
 import user from './schema/user';
 import idm from './schema/idMapping';
 import usercode from './schema/usercode';
 import lang from '../lang';
 
-export async function passport (cookie) {
+module.exports.passort = function(cookie) {
 	let UIDC = decodeURIComponent(cookie);
 	if(!UIDC){
 		return 0;
@@ -24,7 +18,7 @@ export async function passport (cookie) {
 	return data;
 }
 
-export async function getUserId (accountSystem, sourceId) {
+module.exports.getUserId = function(accountSystem, sourceId) {
 	let data = await idm.findOne({
 		accountsystem: accountSystem,
 		sourceid: sourceId
@@ -40,7 +34,7 @@ export async function getUserId (accountSystem, sourceId) {
 	return data.id;
 }
 
-export async function getUserData (id, filter) {
+module.exports.getUserData = function(id, filter) {
 	let data;
 	if(Array.isArray(id)){
 		data = await user.find({
@@ -52,7 +46,7 @@ export async function getUserData (id, filter) {
 	return data;
 }
 
-export function formatUser (data) {
+module.exports.formatUser = function(data) {
 	let _data = {
 		id: data.id,
 		region: data.region,
@@ -73,7 +67,7 @@ export function formatUser (data) {
 	return _data;
 }
 
-export async function findUserList (ids, name) {
+module.exports.findUserList = function (ids, name) {
 	if(!ids&&!name){
 		return {
 			code: 0,
@@ -109,7 +103,7 @@ export async function findUserList (ids, name) {
     };
 }
 
-export async function createUserCode (id) {
+modules.exports.createUserCode = function (id) {
 	let data = await getUserData(id);
 	let limit = data.moreusercode;
 	if(limit <= 0) {

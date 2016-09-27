@@ -1,6 +1,4 @@
-'use strict'
-
-export default function lang (...$) {
+module.exports = function lang (...$) {
 	let ms = {
 		'101': `没有用户名无法激活新用户`,
 		'102': `请登录百度账号`,
@@ -65,4 +63,4 @@ export default function lang (...$) {
 	};
 
 	return msg[$[0]];
-}
+};
