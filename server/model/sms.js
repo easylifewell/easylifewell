@@ -16,8 +16,9 @@ module.exports.send = function(phone, num) {
 	auth = new Buffer(auth).toString('base64');
 	let data = `{"templateSMS":{ "appId":"${appId}","to":"${phone}","templateId":"${templateId}","param":"${num}"}}`;
 	let len = data.length;
-	let url = 'http://api.ucpaas.com/2014-06-30/Accounts/' + sid + '/Messages/templateSMS?sig=' +sig;
+	let url = 'https://api.ucpaas.com/2014-06-30/Accounts/' + sid + '/Messages/templateSMS?sig=' +sig;
 	console.log(url);
+	console.log(data);
 	request.post(url)
 	.send(data)
 	.set('Accept','application/json')
@@ -25,10 +26,10 @@ module.exports.send = function(phone, num) {
 	.set('Content-Length', len)
 	.set('Authorization', auth)
 	.end(function(err, res) {
-     if (err || !res.ok) {
-       console.log('Oh no! error' + JSON.stringify(err));
-     } else {
-       console.log('yay got ' + JSON.stringify(res.body));
-     }
+     		if (err || !res.ok) {
+       			console.log('Oh no! error' + JSON.stringify(err));
+     		} else {
+       			console.log('yay got ' + JSON.stringify(res.body));
+     		}
 	});
 }
