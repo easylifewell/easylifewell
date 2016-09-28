@@ -1,5 +1,7 @@
-module.exports = function lang (...$) {
-	let ms = {
+'use strict';
+
+export default function lang (...$) {
+	let msg = {
 		'101': `没有用户名无法激活新用户`,
 		'102': `请登录百度账号`,
 		'103': `参数超出限制`,
@@ -60,7 +62,7 @@ module.exports = function lang (...$) {
 		'4021': `邀请码无效`,
 		'4022': `无效的手机号`,
 		'4023': `注册成功`,
-	};
 
+	};
 	return msg[$[0]];
-};
+}
