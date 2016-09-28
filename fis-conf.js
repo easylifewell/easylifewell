@@ -12,6 +12,8 @@ fis.config.set('project.exclude', '/client/project');
 fis.config.set('project.exclude', '/client/project/**');
 fis.config.set('project.watch.exclude', '/client/project/**');
 
+fis.enableES7()
+
 if (fis.IS_FIS3) {
     fis.media('debug').match('*', {
         optimizer: null,
