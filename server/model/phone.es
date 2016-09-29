@@ -133,7 +133,7 @@ export async function register(guestData){
 	let username = ANIMAL[Math.round(Math.random() * ANIMAL.length)];
 	let data = await user.active(username, phone);	//  在数据库中存储信息
 	//登录信息更新
-	data.sms = smsCode;
+	data.sms = guestData.smsCode;
 	data.smsSendData = guestData.smsSendData;
 	data.smsChangeDate = guestData.smsChangeDate;
 	let _data = createUIDC(data);

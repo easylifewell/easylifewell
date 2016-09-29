@@ -1,7 +1,6 @@
 'use strict';
 
 import lang from '../../../lang';
-import {createUserCode} from '../../../model/user';
 export default async function (req, res) {
 	let {realname, username} = req.query;
 	if((realname&&realname.length > 7) || (username&&username.length > 7) ) {
