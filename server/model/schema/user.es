@@ -59,5 +59,5 @@ userSchema.statics.active = async function(userName, phone, born){
 
 
 let user = mongoose.model('user', userSchema, 'User');
-
+mongoose.connect('mongodb://45.79.85.217:27017/easylifewell');
 export default user;

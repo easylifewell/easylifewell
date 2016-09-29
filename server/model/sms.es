@@ -4,10 +4,11 @@ import * as moment from 'moment';
 import * as crypto from 'crypto';
 
 export async function send (phone, num) {
-	const appId = '966b998623804b34bee5a17bd1a7a53f';
-	const sid = '239efa53db848efa6acf82e4b2ca49ab';
-	const token = 'f35ced5136c6499e770731b6775da756';
-	const templateId = 23823;
+// 请替换以下四行为实际的值
+	const appId = '';
+	const sid = '';
+	const token = '';
+	const templateId = ;
 	const time = moment().format('YYYYMMDDHHmmss');
 	let auth = sid + ':' + time;
 	let sig = sid + token + time;

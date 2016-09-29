@@ -1,6 +1,6 @@
 'use strict';
 import user from './schema/user';
-import user from './schema/guest';
+import guest from './schema/guest';
 import lang from '../lang';
 import {send} from './sms';
 import * as crypto from 'crypto';
