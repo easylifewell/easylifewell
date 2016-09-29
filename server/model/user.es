@@ -80,8 +80,6 @@ export async function findUserList (ids, name) {
     	code: 200,
     	user: data.map(x => ({
 			id: x.id,
-			// username: x.username,
-			// realname: x.realname,
 			displayname: x.realname||x.username,
 		}))
     };
