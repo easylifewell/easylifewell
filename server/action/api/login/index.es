@@ -2,7 +2,7 @@
 
 import {ACCOUNTMODE} from '../../../config';
 import lang from '../../../lang';
-import {checkSms, checkPhone, regWithoutInvite, getUserByPhone} from '../../../model/phone';
+import {checkSms, checkPhone, registerWithSms, getUserByPhone} from '../../../model/phone';
 
 // 用户登录
 export default async function (req, res){
