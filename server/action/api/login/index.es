@@ -46,7 +46,7 @@ export default async function (req, res){
 	if(!status.code||!status.UIDC) {
 	    return res.json(status)
 	}
-	res.cookie('UIDC', status.UIDC, {expires: new Date(Date.now() + 60000000000), path:'/', domain:'.easylifewell.com'});
+	res.cookie('UIDC', status.UIDC, {expires: new Date(Date.now() + 60000000000), path:'/', domain:'.m.easylifewell.com'});
     res.json({
     	code: 200,
     	msg: lang(4017)
