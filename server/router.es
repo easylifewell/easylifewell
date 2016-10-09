@@ -9,7 +9,7 @@ export default async function (router){
     router.use(async function (req, res, next) {
         let data = await passport(req.cookies.UIDC);
         req.user = data;
-        if(/^\/api\/(?!(login|sms)).*/.test(req.url)){
+        if(/^\/api\/(?!login).*/.test(req.url)){
             if(!data){
                 return res.json({
                     code: -1,
