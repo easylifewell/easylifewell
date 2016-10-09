@@ -5,10 +5,10 @@ import * as crypto from 'crypto';
 
 export async function send (phone, num) {
 // 请替换以下四行为实际的值
-	const appId = '';
-	const sid = '';
-	const token = '';
-	const templateId = ;
+	const appId = '61fd63a1d7a94f8c81c5ee5a01e96a01';
+	const sid = '588379b7b6c442b674187e6de5ae8b9c';
+	const token = '6c8cc0cd398a133c0000b6d64578ff22';
+	const templateId = 30048;
 	const time = moment().format('YYYYMMDDHHmmss');
 	let auth = sid + ':' + time;
 	let sig = sid + token + time;
