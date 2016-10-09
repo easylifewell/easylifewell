@@ -11,6 +11,7 @@ const Xsxk = React.createClass({
     render() {
       return <div>
       <AppBar
+      className="appbar"
         iconElementLeft={<IconButton onClick={this.back}><NavigationLeft /></IconButton>}
           title="食物相生相克"
         />

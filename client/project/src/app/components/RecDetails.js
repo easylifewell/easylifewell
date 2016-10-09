@@ -381,6 +381,7 @@ const RecDetails = React.createClass({
       const currentRec = this.state.currentRec;
   		return <div>
       <AppBar
+      className="appbar"
       iconElementLeft={<IconButton onClick={this.back}><NavigationLeft /></IconButton>}
           title="食材采购"
         />

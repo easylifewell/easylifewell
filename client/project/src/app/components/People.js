@@ -15,7 +15,9 @@ import MenuItem from 'material-ui/MenuItem';
 import Slider from 'material-ui/Slider';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/content/remove';
-import { Link, browserHistory } from 'react-router'
+import { Link, browserHistory } from 'react-router';
+import {green500} from 'material-ui/styles/colors';
+
 
 const styles = {
   chip: {
@@ -103,7 +105,7 @@ const People = React.createClass({
 					<td>{item.age}</td>
 					<td>{item.sex}</td>
 					<td>{item.userNumber}</td>
-					<td><IconButton iconStyle={{color: 'rgb(0, 188, 212)'}} onClick={me.deleteUser.bind(me, index)}><NavigationClose /></IconButton></td>					
+					<td><IconButton iconStyle={{color: green500}} onClick={me.deleteUser.bind(me, index)}><NavigationClose /></IconButton></td>					
 				</tr>;
 		});
 
@@ -111,7 +113,7 @@ const People = React.createClass({
 			<div style={{padding: 10}}>
 				<table style={{textAlign: 'center', width: '100%', color: '#666', fontWeight: 'normal'}}>
 					<thead>
-						<tr style={{color: 'rgb(0, 188, 212)'}}>
+						<tr style={{color: green500}}>
 							<th>年龄段</th>
 							<th>性别</th>
 							<th>数量</th>
@@ -196,7 +198,8 @@ const People = React.createClass({
 	render() {
 		return <div>
     		<AppBar
-			    title="就餐选择" showMenuIconButton={false}
+    			className="appbar"
+			    title="就餐选择" showMenuIconButton={false} titleStyle={{fontSize: '1.4em'}}
 			  />
 			<Card>
 		    <CardText>

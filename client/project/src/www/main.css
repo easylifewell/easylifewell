@@ -8,3 +8,15 @@ body {
   margin: 0;
 }
 
+.appbar {
+	position: fixed !important;
+	width: 100% !important;
+	height: 50px;
+	top: 0;
+}
+.appbar+div {
+	margin-top: 50px;
+}
+.appbar h1 {
+	font-size: 1.4em !important;
+}

@@ -50,6 +50,7 @@ const Recipe = React.createClass({
   		});
   		return <div>
   		<AppBar
+      className="appbar"
   			iconElementLeft={<IconButton onClick={me.back}><NavigationLeft /></IconButton>}
           title="菜谱推荐"
         />

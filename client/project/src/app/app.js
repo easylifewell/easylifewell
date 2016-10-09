@@ -12,6 +12,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; 
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {green500} from 'material-ui/styles/colors';
+import AppBar from 'material-ui/AppBar';
 
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
@@ -39,10 +42,20 @@ const store = createStore(
 
 const history = syncHistoryWithStore(browserHistory, store)
 
+const muiTheme = getMuiTheme({
+  palette: {
+    textColor: green500,
+    primary1Color: green500,
+    primary2Color: green500,
+  },
+  appBar: {
+    height: 50,
+  },
+});
 // Render the main app react component into the app div.
 // For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
       <div>
         <Router history={history}>

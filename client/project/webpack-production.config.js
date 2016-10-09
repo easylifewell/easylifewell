@@ -14,6 +14,9 @@ const config = {
     filename: 'app.js', // Name of output file
   },
   plugins: [
+    // Enables Hot Modules Replacement
+    new webpack.HotModuleReplacementPlugin(),
+
     // Define production build to allow React to strip out unnecessary checks
     new webpack.DefinePlugin({
       'process.env':{
@@ -38,7 +41,7 @@ const config = {
     loaders: [
       {
         test: /\.js$/, // All .js files
-        loaders: ['babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
+        loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
         exclude: [nodeModulesPath],
       },
     ],

@@ -11,6 +11,7 @@ const Yingyang = React.createClass({
   	render() {
   		return <div>
   		<AppBar
+      className="appbar"
   			iconElementLeft={<IconButton onClick={this.back}><NavigationLeft /></IconButton>}
           title="中国18-49岁成年居民膳食营养素参考摄入量"
         />
