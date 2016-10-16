@@ -1,11 +1,19 @@
 const initialState = {
-  selectedIndex: 0
+  selectedIndex: 0,
+  userInfo: ''
 }
 
 export default function update(state = initialState, action) {
-  if(action.type === 'select') {
-    return { selectedIndex: action.index }
+  switch (action.type) {
+    case 'select':
+      return Object.assign({}, state, {
+        selectedIndex: action.index
+      })
+     case 'getUserInfo':
+     return Object.assign({}, state, {
+        userInfo: action.userInfo
+      })
+    default:
+      return state
   }
-
-  return state
 }

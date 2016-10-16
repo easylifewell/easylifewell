@@ -2,13 +2,14 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(./iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
-       url(./iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-       url(./iconfont/MaterialIcons-Regular.woff) format('woff'),
-       url(./iconfont/MaterialIcons-Regular.ttf) format('truetype');
+       url(MaterialIcons-Regular.woff2) format('woff2'),
+       url(MaterialIcons-Regular.woff) format('woff'),
+       url(MaterialIcons-Regular.ttf) format('truetype');
 }
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -32,36 +33,4 @@
 
   /* Support for IE. */
   font-feature-settings: 'liga';
-}
-html {
-  font-family: sans-serif;
-}
-
-body {
-  font-size: 13px;
-  line-height: 20px;
-  margin: 0;
-}
-.appHeader {
-	position: fixed;
-    width: 100%;
-    height: 50px;
-    top: 0;
-    z-index: 9999;
-    color: #fff;
-    line-height: 50px;
-    padding: 0 20px;
-}
-
-.appHeader .material-icons {
-	top: 7px;
-}
-.appbar {
-	background: #f1f1f1 !important;
-}
-
-.appbar h1, .appbar svg {
-	font-size: 1.3em !important;
-	color: #333 !important;
-	fill: #333 !important;
 }

@@ -16,7 +16,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {green500} from 'material-ui/styles/colors';
 import AppBar from 'material-ui/AppBar';
 
-import { createStore, combineReducers } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+
+
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
@@ -35,9 +38,10 @@ const DevTools = createDevTools(
   </DockMonitor>
 )
 
-const store = createStore(
+let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const store = createStoreWithMiddleware(
   reducer,
-  DevTools.instrument()
+  // DevTools.instrument()
 )
 
 const history = syncHistoryWithStore(browserHistory, store)
@@ -52,6 +56,7 @@ const muiTheme = getMuiTheme({
     height: 50,
   },
 });
+
 // Render the main app react component into the app div.
 // For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
 ReactDOM.render(

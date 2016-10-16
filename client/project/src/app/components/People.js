@@ -18,7 +18,6 @@ import NavigationClose from 'material-ui/svg-icons/content/remove';
 import { Link, browserHistory } from 'react-router';
 import {green500} from 'material-ui/styles/colors';
 
-
 const styles = {
   chip: {
     margin: 4,
