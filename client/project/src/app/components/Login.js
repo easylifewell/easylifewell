@@ -23,8 +23,9 @@ class Login extends Component {
 
   render() {
   	let { dispatch, userInfo, verCode, loginInfo } = this.props;
-    if (userInfo.code && userInfo.code === 200 || !loginInfo.code) {
-    	browserHistory.push('/people');
+    if (!userInfo.code || loginInfo.code && loginInfo.code === 200) {
+    	//browserHistory.push('/people');
+      window.location.href = '/people';
     };
     let [phoneErrorMsg, loginErrorMsg] = ['', ''];
     if (verCode.code !== 200) {

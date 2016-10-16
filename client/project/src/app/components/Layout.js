@@ -22,7 +22,6 @@ class App extends Component {
 
   render() {
   	let { dispatch, selectedIndex, userInfo, children } = this.props;
-    console.log(userInfo)
     if(userInfo.code && userInfo.code !== 200) {
     	browserHistory.push('/login');
     };
@@ -47,7 +46,11 @@ class App extends Component {
 	          <BottomNavigationItem
 	            label="关于"
 	            icon={faceIcon}
-	            onTouchTap={() => dispatch(actionCreators.select(2))}
+	            onTouchTap={() => {
+                  dispatch(actionCreators.select(2));
+                  browserHistory.push('/about');
+                }
+              }
 	          />
 	        </BottomNavigation>
 	      </Paper>

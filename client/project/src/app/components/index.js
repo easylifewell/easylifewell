@@ -7,3 +7,4 @@ export Yangshengclock from './Yangshengclock';
 export Yingyang from './Yingyang';
 export Count from './Count';
 export Login from './Login';
+export About from './About';
