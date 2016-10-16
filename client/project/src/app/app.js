@@ -25,7 +25,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import * as reducers from './reducers'
-import { Layout, Count, People, Recipe, RecDetails, Xsxk, Yangshengclock, Yingyang } from './components'
+import { Layout, Count, People, Recipe, RecDetails, Xsxk, Yangshengclock, Yingyang, Login } from './components'
 
 const reducer = combineReducers({
   ...reducers,
@@ -64,6 +64,7 @@ ReactDOM.render(
     <Provider store={store}>
       <div>
         <Router history={history}>
+          <Route path="/login" component={Login} />
           <Route path="/" component={Layout}>
             <IndexRoute component={People}/>
             <Route path="people" component={People} />

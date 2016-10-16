@@ -22,8 +22,10 @@ class App extends Component {
 
   render() {
   	let { dispatch, selectedIndex, userInfo, children } = this.props;
-
-    console.log(this.props);
+    console.log(userInfo)
+    if(userInfo.code && userInfo.code !== 200) {
+    	browserHistory.push('/login');
+    };
   	return (
     	<div dispatch={dispatch}>
     		<div className="appHeader" style={{background: green500}}>
